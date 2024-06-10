@@ -3,13 +3,13 @@ h1,h2{
     text-align: center;
   }
 
-.Vista-Paciente {
+.Vista-paciente {
     font-family: Arial, sans-serif;
     padding: 20px;
     background-color: powderblue;
   }
   
-  .Info-del-Paciente {
+  .Info-del-paciente {
     background-color: antiquewhite;
     border: 1px solid black;
     border-radius: 5px;
@@ -17,14 +17,14 @@ h1,h2{
     margin-bottom: 20px;
   }
   
-  .Info-del-Paciente div {
+  .Info-del-paciente div {
     margin-bottom: 10px;
     font-family: 'Times New Roman', Times, serif;
     color: black;
     font-size: 22px;
   }
   
-  .Info-del-Paciente label {
+  .Info-del-paciente label {
     font-weight:bold;
     color: blue;
   }

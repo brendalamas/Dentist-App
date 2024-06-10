@@ -1,21 +1,17 @@
-<div class="Vista-Paciente">
-    <h1>Información del Paciente</h1>
-    <div class="Info-del-Paciente">
+<div class="Vista-paciente" *ngIf="paciente">
+    <h1>Información del paciente</h1>
+    <div class="Info-del-paciente">
         <div>
             <label>Nombre:</label>
-            <span>{{ Paciente.nombre }}</span>
-        </div>
-        <div>
-            <label>Apellido:</label>
-            <span>{{ Paciente.apellido }}</span>
+            <span>{{ paciente.Nombre }}</span>
         </div>
         <div>
             <label>DNI:</label>
-            <span>{{ Paciente.dni }}</span>
+            <span>{{ paciente.Dni }}</span>
         </div>
         <div>
-            <label>Género:</label>
-            <span>{{ Paciente.genero }}</span>
+            <label>Sexo:</label>
+            <span>{{ paciente.Sexo }}</span>
         </div>
     </div>
 
@@ -29,13 +25,13 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ Paciente.fechaCons }}</td>
-                <td>{{ Paciente.consulta }}</td>
+                <td>{{ paciente.Fecha_Cons }}</td>
+                <td>{{ paciente.Razon_Cons }}</td>
             </tr>
             <tr>
                 <td colspan="2">
                   <div class="diagnostico">
-                    {{Paciente.Diagnostico}}
+                    {{paciente.Diagnostico}}
                   </div>
                 </td>
             </tr>

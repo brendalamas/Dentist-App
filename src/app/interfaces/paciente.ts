@@ -1,10 +1,9 @@
 export interface Paciente {
-    nombre: string;
-    apellido: string;
-    dni: string;
-    genero: string;
-    fechaCons: string;
-    telefono: string;
-    consulta: string;
-    Diagnostico: string
+    Diagnostico: " Esta llena de carries",
+    Dni:"12131312",
+    Edad:45,
+    Fecha_Cons:"12-02-21",
+    Nombre:"Elsa Pato",
+    Razon_Cons:"Dolor de muela",
+    Sexo:"Femenino"
 }
