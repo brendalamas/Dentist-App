@@ -1,1 +1,44 @@
-<p>vistapaciente works!</p>
+<div class="Vista-Paciente">
+    <h1>Información del Paciente</h1>
+    <div class="Info-del-Paciente">
+        <div>
+            <label>Nombre:</label>
+            <span>{{ Paciente.nombre }}</span>
+        </div>
+        <div>
+            <label>Apellido:</label>
+            <span>{{ Paciente.apellido }}</span>
+        </div>
+        <div>
+            <label>DNI:</label>
+            <span>{{ Paciente.dni }}</span>
+        </div>
+        <div>
+            <label>Género:</label>
+            <span>{{ Paciente.genero }}</span>
+        </div>
+    </div>
+
+    <h2>Consulta Médica</h2>
+    <table class="Historia-Medica">
+        <thead>
+            <tr>
+                <th>Fecha de Consulta</th>
+                <th>Razón de Consulta</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ Paciente.fechaCons }}</td>
+                <td>{{ Paciente.consulta }}</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                  <div class="diagnostico">
+                    {{Paciente.Diagnostico}}
+                  </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
