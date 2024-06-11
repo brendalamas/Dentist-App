@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Paciente } from '../interfaces/paciente';
-import { ApiPacientesService } from '../Api_pacientes/api-pacientes.service';
+import { Paciente } from '../../interfaces/paciente';
+import { ApiPacientesService } from '../../Api_pacientes/api-pacientes.service';
 
 @Component({
   selector: 'app-agenda',
