@@ -52,6 +52,7 @@
                 <th scope="col">Dni</th>
                 <th scope="col">Fecha</th>
                 <th scope="col">Nombre</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>               
@@ -60,6 +61,7 @@
                         <th scope="row">{{ turno.Dni }}</th>
                         <td>{{ turno.Fecha_Cons }}</td>
                         <td>{{ turno.Nombre }}</td>
+                        <td><button type="button" [routerLink]="['/pacientes',turno.Dni]">Detalles</button> </td>
                     </tr>
                 }
                
