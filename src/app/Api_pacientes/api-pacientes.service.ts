@@ -22,5 +22,8 @@ export class ApiPacientesService {
     return this._httpCliente.get<Paciente[]>(this.apiUrl);
   }
 
+  postPaciente(paciente: Paciente): Observable<Paciente> {
+    return this._httpCliente.post<Paciente>(this.apiUrl, paciente);
+  }
   
 }

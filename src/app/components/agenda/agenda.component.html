@@ -1,70 +1,118 @@
-<h1>Agenda</h1>
+<div class="center">
+  <!--CALENDARIO-->
+  <div class="calendar">
+    <h3>Junio 2024</h3>
+    <ol>
+      <li class="day-name">Lun</li>
+      <li class="day-name">Mar</li>
+      <li class="day-name">Mie</li>
+      <li class="day-name">Jue</li>
+      <li class="day-name">Vie</li>
+      <li class="day-name">Sab</li>
+      <li class="day-name">Dom</li>
 
-    <div>
-        <!--CALENDARIO-->
-        <h3>Junio 2024</h3>
-        <ol>
-            <li class="day-name">Lun</li>
-            <li class="day-name">Mar</li>
-            <li class="day-name">Mier</li>
-            <li class="day-name">Jue</li>
-            <li class="day-name">Vie</li>
-            <li class="day-name">Sab</li>
-            <li class="day-name">Dom</li>
-    
-            <li class="first-day" (click)="onDateClick(1)">1</li>
-            <li (click)="onDateClick(2)">2</li>
-            <li (click)="onDateClick(3)">3</li>
-            <li (click)="onDateClick(4)">4</li>
-            <li (click)="onDateClick(5)">5</li>
-            <li (click)="onDateClick(6)">6</li>
-            <li (click)="onDateClick(7)">7</li>
-            <li (click)="onDateClick(8)">8</li>
-            <li (click)="onDateClick(9)">9</li>
-            <li (click)="onDateClick(10)">10</li>
-            <li (click)="onDateClick(11)">11</li>
-            <li (click)="onDateClick(12)">12</li>
-            <li (click)="onDateClick(13)">13</li>
-            <li (click)="onDateClick(14)">14</li>
-            <li (click)="onDateClick(15)">15</li>
-            <li (click)="onDateClick(16)">16</li>
-            <li (click)="onDateClick(17)">17</li>
-            <li (click)="onDateClick(18)">18</li>
-            <li (click)="onDateClick(19)">19</li>
-            <li (click)="onDateClick(20)">20</li>
-            <li (click)="onDateClick(21)">21</li>
-            <li (click)="onDateClick(22)">22</li>
-            <li (click)="onDateClick(23)">23</li>
-            <li (click)="onDateClick(24)">24</li>
-            <li (click)="onDateClick(25)">25</li>
-            <li (click)="onDateClick(26)">26</li>
-            <li (click)="onDateClick(27)">27</li>
-            <li (click)="onDateClick(28)">28</li>
-            <li (click)="onDateClick(29)">29</li>
-            <li (click)="onDateClick(30)">30</li>
-        </ol>
-    </div>
-    
-        <!--TABLA-->
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Dni</th>
-                <th scope="col">Fecha</th>
-                <th scope="col">Nombre</th>
-              </tr>
-            </thead>
-            <tbody>               
-                @for (turno of turnosFiltrados; track turno.Dni) {
-                    <tr>
-                        <th scope="row">{{ turno.Dni }}</th>
-                        <td>{{ turno.Fecha_Cons }}</td>
-                        <td>{{ turno.Nombre }}</td>
-                    </tr>
-                }
-               
-            </tbody>
-        </table>
-    
-    
+      <li class="first-day" (click)="onDateClick(1)">1</li>
+      <li (click)="onDateClick(2)" [class.selected]="selectedDate === 2">2</li>
+      <li (click)="onDateClick(3)" [class.selected]="selectedDate === 3">3</li>
+      <li (click)="onDateClick(4)" [class.selected]="selectedDate === 4">4</li>
+      <li (click)="onDateClick(5)" [class.selected]="selectedDate === 5">5</li>
+      <li (click)="onDateClick(6)" [class.selected]="selectedDate === 6">6</li>
+      <li (click)="onDateClick(7)" [class.selected]="selectedDate === 7">7</li>
+      <li (click)="onDateClick(8)" [class.selected]="selectedDate === 8">8</li>
+      <li (click)="onDateClick(9)" [class.selected]="selectedDate === 9">9</li>
+      <li (click)="onDateClick(10)" [class.selected]="selectedDate === 10">
+        10
+      </li>
+      <li (click)="onDateClick(11)" [class.selected]="selectedDate === 11">
+        11
+      </li>
+      <li (click)="onDateClick(12)" [class.selected]="selectedDate === 12">
+        12
+      </li>
+      <li (click)="onDateClick(13)" [class.selected]="selectedDate === 13">
+        13
+      </li>
+      <li (click)="onDateClick(14)" [class.selected]="selectedDate === 14">
+        14
+      </li>
+      <li (click)="onDateClick(15)" [class.selected]="selectedDate === 15">
+        15
+      </li>
+      <li (click)="onDateClick(16)" [class.selected]="selectedDate === 16">
+        16
+      </li>
+      <li (click)="onDateClick(17)" [class.selected]="selectedDate === 17">
+        17
+      </li>
+      <li (click)="onDateClick(18)" [class.selected]="selectedDate === 18">
+        18
+      </li>
+      <li (click)="onDateClick(19)" [class.selected]="selectedDate === 19">
+        19
+      </li>
+      <li (click)="onDateClick(20)" [class.selected]="selectedDate === 20">
+        20
+      </li>
+      <li (click)="onDateClick(21)" [class.selected]="selectedDate === 21">
+        21
+      </li>
+      <li (click)="onDateClick(22)" [class.selected]="selectedDate === 22">
+        22
+      </li>
+      <li (click)="onDateClick(23)" [class.selected]="selectedDate === 23">
+        23
+      </li>
+      <li (click)="onDateClick(24)" [class.selected]="selectedDate === 24">
+        24
+      </li>
+      <li (click)="onDateClick(25)" [class.selected]="selectedDate === 25">
+        25
+      </li>
+      <li (click)="onDateClick(26)" [class.selected]="selectedDate === 26">
+        26
+      </li>
+      <li (click)="onDateClick(27)" [class.selected]="selectedDate === 27">
+        27
+      </li>
+      <li (click)="onDateClick(28)" [class.selected]="selectedDate === 28">
+        28
+      </li>
+      <li (click)="onDateClick(29)" [class.selected]="selectedDate === 29">
+        29
+      </li>
+      <li (click)="onDateClick(30)" [class.selected]="selectedDate === 30">
+        30
+      </li>
+    </ol>
+  </div>
+</div>
 
+<!--TABLA-->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Fecha</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Documento</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Consulta</th>
+      <th scope="col">Cobertura</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (turno of turnosFiltrados; track turno.dni) {
+    <tr>
+      <th scope="row">{{ turno.fecha_cons }}</th>
+      <td>{{ turno.nombre }}</td>
+      <td>{{ turno.apellido }}</td>
+      <td>{{ turno.edad }}</td>
+      <td>{{ turno.dni }}</td>
+      <td>{{ turno.telefono }}</td>
+      <td>{{ turno.razon_cons }}</td>
+      <td>{{ turno.cobertura }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
