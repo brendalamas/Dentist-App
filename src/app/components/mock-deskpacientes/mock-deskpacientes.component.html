@@ -12,12 +12,12 @@
         </thead>
 
         <tbody>
-            @for (paciente of Pacientes; track paciente.Dni) {
+            @for (paciente of Pacientes; track paciente.dni) {
             <tr>
-                <th scope="row">{{paciente.Dni}}</th>
-                <td>{{paciente.Nombre}}</td>
-                <td>{{paciente.Fecha_Cons}}</td>
-                <td><button type="button" [routerLink]="['/pacientes',paciente.Dni]">Detalles</button> </td>
+                <th scope="row">{{paciente.dni}}</th>
+                <td>{{paciente.nombre}}</td>
+                <td>{{paciente.fecha_cons}}</td>
+                <td><button type="button" [routerLink]="['/pacientes',paciente.dni]">Detalles</button> </td>
             </tr>
             }
         </tbody>
