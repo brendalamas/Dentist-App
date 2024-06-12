@@ -19,6 +19,7 @@ export class AgendaComponent implements OnInit {
   turnosList : Paciente[] = []
   //Crea un array vacio para los turnos filtrados
   turnosFiltrados: Paciente[] = [];
+  selectedDate: number | null = null;
 
   constructor(private _apiService:ApiPacientesService){}
 
@@ -42,7 +43,8 @@ export class AgendaComponent implements OnInit {
    */
   onDateClick(dia: number): void {
     const fecha = this.formatFecha(dia);
-    this.turnosFiltrados = this.turnosList.filter(turno => turno.Fecha_Cons === fecha);
+    this.turnosFiltrados = this.turnosList.filter(turno => turno.fecha_cons === fecha);
+    this.selectedDate = dia;
   }
 
   /**

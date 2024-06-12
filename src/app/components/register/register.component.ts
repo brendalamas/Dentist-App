@@ -1,42 +1,58 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../interfaces/user';
 import { FormsModule } from '@angular/forms';
-import { log } from 'console';
+import { ActivatedRoute } from '@angular/router';
+import { Paciente } from '../../interfaces/paciente';
+import { CommonModule } from '@angular/common';
+import { ApiPacientesService } from '../../Services/api-pacientes.service';
 
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class RegisterComponent implements OnInit{
-  user: User = {} as User;
+  user: Paciente = {
+    nombre: '',
+    apellido: '',
+    email: '',
+    telefono: 0,
+    fechaNacimiento: '',
+    edad: 1,
+    genero: '',
+    dni: '',
+    fecha_cons: '',
+    razon_cons: '',
+    diagnostico: '',
+    usuario: '',
+    cobertura: '',
+  };
   
-  constructor() {
-    this.user = {} as User;
-  }
+  constructor(
+    private route : ActivatedRoute,
+    private apiPacienteService: ApiPacientesService
+  ){}
 
   ngOnInit() {
-    console.log("registerrr")
-    this.user = {
-      id: 1,
-      nombre: '',
-      apellido: '',
-      email: '',
-      telefono: '',
-      fechaNacimiento: '',
-      dni: '',
-      genero: '',
-      usuario: '',
-      cobertura: '',
-    };
   }
 
   onSubmit() {
-    console.log('Formulario enviado:', this.user);
-    console.log('Se guardan los datos');
-    
+    console.log('Se guardan los datos', this.user);
+    this.route.params.subscribe({
+      next: params => {
+        this.apiPacienteService.postPaciente(this.user).subscribe({
+          next:data =>{
+            console.log("Data ",data)
+          }, error : error => {
+            console.log("Error: ", error);
+          }
+        })
+      }, error : error => {
+        console.log("Error: ", error);
+      }
+
+    }) 
   }
 }

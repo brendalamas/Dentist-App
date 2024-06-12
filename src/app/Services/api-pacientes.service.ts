@@ -28,5 +28,9 @@ export class ApiPacientesService {
   putpacienteDiagnostico(dni: string,diagnostico:string): Observable<Paciente> {
     return this._httpCliente.put<Paciente>(`${this.apiUrl}/${dni}`,{ Diagnostico: diagnostico });
   }
+  
+  postPaciente(paciente: Paciente): Observable<Paciente> {
+    return this._httpCliente.post<Paciente>(this.apiUrl, paciente);
+  }
 
 }

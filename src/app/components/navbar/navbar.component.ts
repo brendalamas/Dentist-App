@@ -6,10 +6,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet, RouterLink],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  constructor() {
-    console.log("Se ejecuta Navbar");
-  }
 }
