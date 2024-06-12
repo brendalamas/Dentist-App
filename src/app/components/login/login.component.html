@@ -1,1 +1,21 @@
-<p>login works!</p>
+<div class="form-container">
+    <h1> Inicio de sesión </h1>
+     <!-- El formulario se enviará cuando se haga clic en el botón de submit -->
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <!-- Input del email -->
+      <input class="form-item" placeholder="Email" type="email" name="email" formControlName="email" required>
+      <!-- Input del contraseña -->
+      <input class="form-item" placeholder="Contraseña" type="password" name="password" formControlName="password" required>
+      <div class="button-container">
+          <!-- link para ir a registro -->
+          <a id="link-register" href="/register"> ¿No tiene cuenta? Registrese ya</a>
+          <!-- boton para loguearse -->
+          <button type="submit" [disabled]="loginForm.invalid">Ingresar</button>
+          <!-- mensajes de error -->
+           <!-- si se toca el input pero no se completa-->
+          <p class="p-error" *ngIf="loginForm.invalid && loginForm.touched"> Porfavor complete los campos</p>
+          <!-- si se encuentra el usuario -->
+          <p class="p-error" *ngIf="mensajeError"> Error al iniciar sesion, intente nuevamente. </p>
+      </div>
+    </form>
+  </div>
