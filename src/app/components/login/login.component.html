@@ -4,11 +4,11 @@
     <form [formGroup]="loginForm" (ngSubmit)="login()">
       <!-- Input del email -->
       <input class="form-item" placeholder="Email" type="email" name="email" formControlName="email" required>
-      <!-- Input del email -->
+      <!-- Input del contraseña -->
       <input class="form-item" placeholder="Contraseña" type="password" name="password" formControlName="password" required>
       <div class="button-container">
           <!-- link para ir a registro -->
-          <a routerLink="/register"> ¿No tiene cuenta? Registrese ya</a>
+          <a id="link-register" href="/register"> ¿No tiene cuenta? Registrese ya</a>
           <!-- boton para loguearse -->
           <button type="submit" [disabled]="loginForm.invalid">Ingresar</button>
           <!-- mensajes de error -->

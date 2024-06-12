@@ -1,4 +1,4 @@
-/* */
+/* configuraciones generales del formulario */
 .form-container {
     background-color: #f5f5f5;
     padding: 20px;
@@ -12,6 +12,15 @@
     align-items: center;
 }
 
+.form-item{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* textos */
 h1{
     text-align: center;
     color: #4b0082;
@@ -26,13 +35,13 @@ a{
     font-size: 20px;
 }
 
-.form-item{
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+#link-register{
+    text-decoration: none;
+    color: #4b0082;
 }
+
+
+/* seccion botones */
 
 .form-container button {
     padding: 10px;
