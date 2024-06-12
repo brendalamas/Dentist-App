@@ -101,10 +101,31 @@
           <option value="no">No</option>
         </select>
       </div>
+      <div class="form-group">
+        <label for="fechaNacimiento">Turno:</label>
+        <input
+          type="date"
+          id="fechaNacimiento"
+          name="fechaNacimiento"
+          [(ngModel)]="user.fecha_cons"
+          required
+        />
+      </div>
     </div>
-
+    <div class="form-row">
+      <div class="form-group">
+        <label for="nombre">Razón de Consulta:</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          [(ngModel)]="user.razon_cons"
+          width="auto"
+        />
+      </div>
+    </div>
     <button
-      type="button"
+      type="submit"
       class="btn btn-primary"
       data-bs-toggle="modal"
       data-bs-target="#registerModal"

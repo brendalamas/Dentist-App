@@ -11,7 +11,7 @@ export class ApiPacientesService {
   private _httpCliente = inject(HttpClient);
   constructor() { }
 
-  private apiUrl = 'http://localhost:3000/api/Pacientes';
+  private apiUrl = 'http://localhost:3000/Pacientes';
 
 
   //Se obtiene el paciente por parametro dni

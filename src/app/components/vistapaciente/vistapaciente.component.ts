@@ -22,8 +22,6 @@ export class VistapacienteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("HOLA ESOTY ACAAAAAA") // Comentario que se utilizo de prueba para ver si recibia al paciente
-
     //Ni bien inicia se obtiene un parametro - este parametro es el dni
     this.route.params.subscribe({
       next: params => {
