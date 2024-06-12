@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 .navbar{
+=======
+
+*{
+    margin: 0;
+}
+.navbar {
+    background-color: #6a0dad; 
+    border-radius: 5px;
+>>>>>>> a39ee95855741f79258c123850f02c4c401559be
     margin-bottom: 25px;
 }
 .navbar-nav a{
