@@ -19,8 +19,8 @@ export class MockDeskpacientesComponent implements OnInit {
   Pacientes: Paciente[] = [];
 
   ngOnInit(): void {
-    this.getPacientes();
-    /* this.Pacientes = [
+    //this.getPacientes();
+     this.Pacientes = [
       {
         "Nombre": "Diego Luongo",
         "Edad": 24,
@@ -48,7 +48,7 @@ export class MockDeskpacientesComponent implements OnInit {
         "Diagnostico": "En Argentina nací Tierra de Diego y Lionel De los pibes de Malvinas Que jamás olvidaré No te lo puedo explicar Porque no vas a entender Las finales que perdimos Cuántos años la lloré Pero eso se terminó Porque en el Maracaná La final con los brazucas La volvió a ganar papá Muchachos Ahora nos volvimo' a ilusionar Quiero ganar la tercera Quiero ser campeón mundial Y el Diego En el cielo lo podemos ver Con Don Diego y con La Tota Alentándolo a Lionel",
         "Dni": "fdsdsds"
       }
-    ]; */
+    ]; 
   }
 
   getPacientes() {
