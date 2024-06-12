@@ -13,13 +13,20 @@ export class ApiPacientesService {
 
   private apiUrl = 'http://localhost:3000/api/Pacientes';
 
-  getPaciente(dni: string): Observable<Paciente> {
+
+  //Se obtiene el paciente por parametro dni
+  getPacientebyDni(dni: string): Observable<Paciente> {
     return this._httpCliente.get<Paciente>(`${this.apiUrl}/${dni}`);
   }
 
+  //Se obtiene todos los pacientes
   getPacientes(): Observable<Paciente[]> {
-    return this._httpCliente.get<Paciente[]>(this.apiUrl);
+    return this._httpCliente.get<Paciente[]>(`${this.apiUrl}`);
   }
 
-  
+  //Se actuliza el diagnostico de un paciente
+  putpacienteDiagnostico(dni: string,diagnostico:string): Observable<Paciente> {
+    return this._httpCliente.put<Paciente>(`${this.apiUrl}/${dni}`,{ Diagnostico: diagnostico });
+  }
+
 }

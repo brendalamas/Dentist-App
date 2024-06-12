@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiPacientesService } from '../../Api_pacientes/api-pacientes.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Paciente } from '../../interfaces/paciente';
 import { ActivatedRoute } from '@angular/router';
-
-
+import { ApiPacientesService } from '../../Services/api-pacientes.service';
 
 @Component({
   selector: 'app-vistapaciente',
@@ -16,19 +14,26 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class VistapacienteComponent implements OnInit {
   paciente?: Paciente;
+  nuevoDiagnostico: string = '';
   loading: boolean = true;
 
-  constructor(private Apipacientes: ApiPacientesService,
+  constructor(private Apipacientes:ApiPacientesService,
     private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    console.log("HHOLA ESOTY ACAAAAAA")
+    console.log("HOLA ESOTY ACAAAAAA") // Comentario que se utilizo de prueba para ver si recibia al paciente
+
+    //Ni bien inicia se obtiene un parametro - este parametro es el dni
     this.route.params.subscribe({
       next: params => {
-        this.Apipacientes.getPaciente(params['pacienteDni']).subscribe({
+        //Se ejecuta el endpoint del servicio y se pasa el parametro del dni que se recibio
+
+        this.Apipacientes.getPacientebyDni(params['pacienteDni']).subscribe({
           next: data => {
+            //se carga el paciente y la vista del complemento
             this.paciente = data;
+            console.log(this.paciente);
             this.loading = false;
           }, error: error => {
             console.log(error);
@@ -39,23 +44,22 @@ export class VistapacienteComponent implements OnInit {
       }
     });
   }
+
+  actualizarCambios(dni: string, diagnostico: string): void {
+    //le paso los parametros que obtengo del html
+    this.Apipacientes.putpacienteDiagnostico(dni, diagnostico).subscribe({
+      next: () => {
+        console.log('Diagnóstico actualizado correctamente');
+        location.reload();
+      },
+      error: error => {
+        console.error('Error al actualizar diagnóstico:', error);
+      }
+    });
+  }
+  
+  
+
+
 }
-/* ngOnInit(): void {
-   const dni = "12131312";
- this.Apipacientes.getPaciente(dni).subscribe((paciente)=>{
-   this.paciente = paciente;
-   console.log(paciente);
- })
-} */ //ESTO ES HARDCODEA SIRVIO DE PRUEBAS
 
-
-/* Paciente:Paciente={
-  nombre: 'Zir',
-  apellido: 'Dani',
-  dni: '24336644',
-  genero: 'Femenino',
-  fechaCons: '12-11-2023',
-  telefono: '13145678',
-  consulta: 'Dolor de Estomago',
-  Diagnostico:"Con esto, el diagnóstico del paciente se mostrará dentro del componente app-vistadiagnostico, tanto en su archivo TypeScript como en su archivo HTML. Asegúrate de que el componente app-vistadiagnostico esté siendo utilizado correctamente y que el diagnóstico del paciente esté disponible en el lugar donde utilizas este componente."
-} */ //ESTO ES HARDCODEA SIRVIO DE PRUEBAS

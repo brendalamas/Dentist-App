@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiPacientesService } from '../../Api_pacientes/api-pacientes.service';
+
 import { Paciente } from '../../interfaces/paciente';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ApiPacientesService } from '../../Services/api-pacientes.service';
 
 @Component({
   selector: 'app-mock-deskpacientes',
