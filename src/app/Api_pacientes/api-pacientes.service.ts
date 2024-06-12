@@ -11,7 +11,8 @@ export class ApiPacientesService {
   private _httpCliente = inject(HttpClient);
   constructor() { }
 
-  private apiUrl = 'http://localhost:3000/api/Pacientes';
+  //al probar con la direccion http://localhost:3000/api/Pacientes no se muestran los datos del calendario.
+  private apiUrl = 'http://localhost:3000/Pacientes';
 
   getPaciente(dni: string): Observable<Paciente> {
     return this._httpCliente.get<Paciente>(`${this.apiUrl}/${dni}`);
