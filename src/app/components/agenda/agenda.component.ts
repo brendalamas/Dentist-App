@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Paciente } from '../../interfaces/paciente';
-import { ApiPacientesService } from '../../Api_pacientes/api-pacientes.service';
+
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { ApiPacientesService } from '../../Services/api-pacientes.service';
 
 @Component({
   selector: 'app-agenda',
   standalone: true,
-  imports: [],
+  imports: [ CommonModule,RouterLink,FormsModule],
   templateUrl: './agenda.component.html',
   styleUrl: './agenda.component.css'
 })

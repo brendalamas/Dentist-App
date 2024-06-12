@@ -3,6 +3,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DialogContentComponent } from './components/dialog-content/dialog-content.component';
 
+
 @Component({
     selector: 'app-root',
     standalone: true,
@@ -12,4 +13,6 @@ import { DialogContentComponent } from './components/dialog-content/dialog-conte
 })
 export class AppComponent {
   title = 'dentistapp';
+
+ 
 }
