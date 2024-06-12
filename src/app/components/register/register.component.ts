@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../interfaces/user';
 import { FormsModule } from '@angular/forms';
+import { log } from 'console';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class RegisterComponent implements OnInit{
   }
 
   ngOnInit() {
+    console.log("registerrr")
     this.user = {
       id: 1,
       nombre: '',

@@ -1,6 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { RegisterComponent } from "./components/register/register.component";
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @Component({
@@ -8,7 +8,7 @@ import { RegisterComponent } from "./components/register/register.component";
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet,RouterLink, RegisterComponent]
+    imports: [RouterOutlet, RouterLink, NavbarComponent]
 })
 export class AppComponent {
   title = 'dentistapp';

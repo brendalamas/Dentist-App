@@ -1,80 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DentistApp</title>
-</head>
-<body>
-    <div class="registro-paciente">
-        <img src="" alt="DentistApp Logo" class="logo">
-        <h1>Registro de Paciente</h1>
-        <form ngNativeValidate (submit)="onSubmit()">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="nombre">Nombre:</label>
-              <input type="text" id="nombre" name="nombre" [(ngModel)]="user.nombre" required>
-            </div>
-            <div class="form-group">
-              <label for="apellido">Apellido:</label>
-              <input type="text" id="apellido" name="apellido" [(ngModel)]="user.apellido" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" [(ngModel)]="user.email" required>
-            </div>
-            <div class="form-group">
-              <label for="telefono">Teléfono:</label>
-              <input type="tel" id="telefono" name="telefono" [(ngModel)]="user.telefono" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-              <input type="date" id="fechaNacimiento" name="fechaNacimiento" [(ngModel)]="user.fechaNacimiento" required>
-            </div>
-            <div class="form-group">
-              <label for="dni">DNI:</label>
-              <input type="text" id="dni" name="dni" [(ngModel)]="user.dni" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="genero">Género:</label>
-              <select id="genero" name="genero" [(ngModel)]="user.genero" required>
-                <option value="" disabled selected hidden>Seleccionar</option>
-                <option value="masculino">Masculino</option>
-                <option value="femenino">Femenino</option>
-                <option value="otro">Otro</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="usuario">¿Usuario?:</label>
-              <select id="usuario" name="usuario" [(ngModel)]="user.usuario" required>
-                <option value="" disabled selected hidden>Seleccionar</option>
-                <option value="secretaria">Secretaria</option>
-                <option value="doctor">Doctor/a</option>
-                <option value="paciente">Paciente</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="cobertura">¿Tiene cobertura?:</label>
-              <option value="" disabled selected hidden>Seleccionar</option>
-              <select id="cobertura" name="cobertura" [(ngModel)]="user.cobertura" required>
-                <option value="si">Sí</option>
-                <option value="no">No</option>
-              </select>
-            </div>
-          </div>
-          <button type="submit">Registrar</button>
-        </form>
-    </div>
-      
-      
-      
-</body>
-</html>
+<div class="registro-paciente">
+    <h1>Registro de Paciente</h1>
+    <form ngNativeValidate (submit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" [(ngModel)]="user.nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="apellido">Apellido:</label>
+          <input type="text" id="apellido" name="apellido" [(ngModel)]="user.apellido" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" [(ngModel)]="user.email" required>
+        </div>
+        <div class="form-group">
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" [(ngModel)]="user.telefono" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+          <input type="date" id="fechaNacimiento" name="fechaNacimiento" [(ngModel)]="user.fechaNacimiento" required>
+        </div>
+        <div class="form-group">
+          <label for="dni">DNI:</label>
+          <input type="text" id="dni" name="dni" [(ngModel)]="user.dni" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="genero">Género:</label>
+          <select id="genero" name="genero" [(ngModel)]="user.genero" required>
+            <option value="" disabled selected hidden>Seleccionar</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="usuario">¿Usuario?:</label>
+          <select id="usuario" name="usuario" [(ngModel)]="user.usuario" required>
+            <option value="" disabled selected hidden>Seleccionar</option>
+            <option value="secretaria">Secretaria</option>
+            <option value="doctor">Doctor/a</option>
+            <option value="paciente">Paciente</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cobertura">¿Tiene cobertura?:</label>
+          <option value="" disabled selected hidden>Seleccionar</option>
+          <select id="cobertura" name="cobertura" [(ngModel)]="user.cobertura" required>
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+      </div>
+    <button type="submit">Registrar</button>
+  </form>
+</div>
