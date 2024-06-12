@@ -19,7 +19,6 @@ export class RegisterComponent implements OnInit{
   }
 
   ngOnInit() {
-    console.log("registerrr")
     this.user = {
       id: 1,
       nombre: '',
@@ -37,6 +36,7 @@ export class RegisterComponent implements OnInit{
   onSubmit() {
     console.log('Formulario enviado:', this.user);
     console.log('Se guardan los datos');
+    
     
   }
 }
