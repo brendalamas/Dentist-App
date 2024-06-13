@@ -1,27 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
-import { Paciente } from '../../interfaces/paciente';
-import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { ApiPacientesService } from '../../Services/api-pacientes.service';
-
-@Component({
-  selector: 'app-mock-deskpacientes',
-  standalone: true,
-  imports: [ CommonModule,RouterLink,FormsModule],
-  templateUrl: './mock-deskpacientes.component.html',
-  styleUrl: './mock-deskpacientes.component.css'
-})
-export class MockDeskpacientesComponent implements OnInit {
-  constructor(private apiPacientes: ApiPacientesService) { }
-
-  Pacientes: Paciente[] = [];
-
-  ngOnInit(): void {
-    this.getPacientes();
-     /* this.Pacientes = [
-      {
+{
+    "Pacientes": [
+        {
         "nombre": "Carlos",
         "apellido": "López",
         "email": "carlos@gmail.com",
@@ -35,8 +14,8 @@ export class MockDeskpacientesComponent implements OnInit {
         "diagnostico": "Anemia",
         "usuario": "carlosl99",
         "cobertura": "no"
-      },
-      {
+        },
+        {
         "nombre": "Jose",
         "apellido": "García",
         "email": "garciapJose@hotmail.com",
@@ -50,8 +29,8 @@ export class MockDeskpacientesComponent implements OnInit {
         "diagnostico": "Gastritis",
         "usuario": "josega79",
         "cobertura": "si"
-      },
-      {
+        },
+        {
         "nombre": "Victoria",
         "apellido": "Azuaje",
         "email": "lasirenavicky@gmail.com",
@@ -65,8 +44,8 @@ export class MockDeskpacientesComponent implements OnInit {
         "diagnostico": "COVID",
         "usuario": "vickysi12",
         "cobertura": "no"
-      },
-      {
+        },
+        {
         "nombre": "Erica",
         "apellido": "Madrid",
         "email": "Ericama89@gmail.com",
@@ -80,8 +59,8 @@ export class MockDeskpacientesComponent implements OnInit {
         "diagnostico": "Dermatitis atópica",
         "usuario": "erica_españa",
         "cobertura": "si"
-      },
-      {
+        },
+        {
         "nombre": "Moana",
         "apellido": "Motunui",
         "email": "Momotunui@gmail.com",
@@ -95,23 +74,6 @@ export class MockDeskpacientesComponent implements OnInit {
         "diagnostico": "Quemadura solar",
         "usuario": "princesa_87",
         "cobertura": "si"
-      }
-    ];  */
-
-
-  }
-
-  getPacientes() {
-    this.apiPacientes.getPacientes().subscribe({
-      next: data => {
-        console.log(data);
-        console.log("Ejecutó rutina GetPacientes");
-        this.Pacientes = data;
-      }, error: error => {
-        console.log(error);
-      }
-    })
-  }
-
-
+        }
+    ]
 }
