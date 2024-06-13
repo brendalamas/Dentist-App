@@ -19,8 +19,8 @@ export class MockDeskpacientesComponent implements OnInit {
   Pacientes: Paciente[] = [];
 
   ngOnInit(): void {
-    this.getPacientes();
-     /* this.Pacientes = [
+    //this.getPacientes();
+     this.Pacientes = [
       {
         "nombre": "Carlos",
         "apellido": "López",
@@ -96,16 +96,15 @@ export class MockDeskpacientesComponent implements OnInit {
         "usuario": "princesa_87",
         "cobertura": "si"
       }
-    ];  */
+    ]; 
 
-
+    
   }
 
   getPacientes() {
     this.apiPacientes.getPacientes().subscribe({
       next: data => {
         console.log(data);
-        console.log("Ejecutó rutina GetPacientes");
         this.Pacientes = data;
       }, error: error => {
         console.log(error);
