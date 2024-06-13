@@ -12,11 +12,12 @@ export class ApiPacientesService {
   constructor() { }
 
   private apiUrl = 'http://localhost:3000/Pacientes';
+  //http://localhost:3000/Pacientes?dni=23456789B
 
 
   //Se obtiene el paciente por parametro dni
   getPacientebyDni(dni: string): Observable<Paciente> {
-    return this._httpCliente.get<Paciente>(`${this.apiUrl}/${dni}`);
+    return this._httpCliente.get<Paciente>(`${this.apiUrl}?dni=${dni}`);
   }
 
   //Se obtiene todos los pacientes

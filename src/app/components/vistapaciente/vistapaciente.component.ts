@@ -27,7 +27,7 @@ export class VistapacienteComponent implements OnInit {
       next: params => {
         //Se ejecuta el endpoint del servicio y se pasa el parametro del dni que se recibio
 
-        this.Apipacientes.getPacientebyDni(params['pacienteDni']).subscribe({
+        this.Apipacientes.getPacientebyDni(params['dni']).subscribe({
           next: data => {
             //se carga el paciente y la vista del complemento
             this.paciente = data;
