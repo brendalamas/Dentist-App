@@ -13,7 +13,8 @@ import { ApiPacientesService } from '../../Services/api-pacientes.service';
   styleUrl: './vistapaciente.component.css'
 })
 export class VistapacienteComponent implements OnInit {
-  paciente?: Paciente;
+  pacientes:Paciente[] = [];
+  paciente? :Paciente;
   nuevoDiagnostico: string = '';
   loading: boolean = true;
 
@@ -27,10 +28,13 @@ export class VistapacienteComponent implements OnInit {
       next: params => {
         //Se ejecuta el endpoint del servicio y se pasa el parametro del dni que se recibio
 
-        this.Apipacientes.getPacientebyDni(params['pacienteDni']).subscribe({
+        this.Apipacientes.getPacientebyDni(params['dni']).subscribe({
           next: data => {
             //se carga el paciente y la vista del complemento
-            this.paciente = data;
+            this.pacientes = data;
+
+            this.paciente = this.pacientes[0];
+
             console.log(this.paciente);
             this.loading = false;
           }, error: error => {
@@ -44,14 +48,16 @@ export class VistapacienteComponent implements OnInit {
   }
 
   actualizarCambios(dni: string, diagnostico: string): void {
-    //le paso los parametros que obtengo del html
+    // Actualiza el diagnóstico del paciente
     this.Apipacientes.putpacienteDiagnostico(dni, diagnostico).subscribe({
       next: () => {
         console.log('Diagnóstico actualizado correctamente');
         location.reload();
+        
       },
       error: error => {
         console.error('Error al actualizar diagnóstico:', error);
+        
       }
     });
   }

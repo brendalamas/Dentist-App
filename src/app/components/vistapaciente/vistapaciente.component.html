@@ -42,13 +42,13 @@
                     <td colspan="2">
                         <h5>Diagnóstico</h5>
                         <div class="diagnostico">{{paciente.diagnostico}}</div> <br> <!-- Aca muestro los datos de la api -->
-                        <input type="text" [(ngModel)]="nuevoDiagnostico" placeholder="PUEDES EDITAR EL DIAGNOSTICO AQUI!!!!"> <!-- Aca puedo poner otros datos en el div y se guardan como infomacion en la api-->
+                        <textarea type="text" [(ngModel)]="nuevoDiagnostico" placeholder="PUEDES EDITAR EL DIAGNOSTICO AQUI!!!!"></textarea> <!-- Aca puedo poner otros datos en el div y se guardan como infomacion en la api-->
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
                         <button class="btn-guardar" type="button" 
-                            (click)="actualizarCambios(paciente.dni,nuevoDiagnostico)"> Guardar </button><!-- Ejecuta el envio de datos -->
+                            (click)="actualizarCambios(paciente.id,nuevoDiagnostico)"> Guardar </button><!-- Ejecuta el envio de datos -->
                     </td>
                 </tr>
             </tbody>

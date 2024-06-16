@@ -73,7 +73,7 @@ th {
   overflow:auto;
 }
 
-input{
+textarea{
   width: 770px;
   height: 80px;
   background-color: burlywood;

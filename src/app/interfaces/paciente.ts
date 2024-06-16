@@ -12,4 +12,5 @@ export interface Paciente {
     diagnostico: string,
     usuario: string,
     cobertura: string,
+    id: string,
 }

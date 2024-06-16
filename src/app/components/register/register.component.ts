@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit{
     email: '',
     telefono: 0,
     fechaNacimiento: '',
-    edad: 1,
+    edad: 0,
     genero: '',
     dni: '',
     fecha_cons: '',
@@ -28,6 +28,7 @@ export class RegisterComponent implements OnInit{
     diagnostico: '',
     usuario: '',
     cobertura: '',
+    id:""
   };
   
   constructor(
