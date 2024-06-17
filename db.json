@@ -139,6 +139,22 @@
       "diagnostico": "",
       "usuario": "paciente",
       "cobertura": "si"
+    },
+    {
+      "id": "",
+      "nombre": "Pedro",
+      "apellido": "Iturriaga",
+      "email": "iturriaga@gmail.com",
+      "telefono": "0111541870373",
+      "fechaNacimiento": "2024-06-03",
+      "edad": 0,
+      "genero": "masculino",
+      "dni": "12478321",
+      "fecha_cons": "2024-06-17",
+      "razon_cons": "Diente",
+      "diagnostico": "",
+      "usuario": "paciente",
+      "cobertura": "si"
     }
   ]
 }

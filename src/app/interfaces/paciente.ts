@@ -11,6 +11,5 @@ export interface Paciente {
     razon_cons: string,
     diagnostico: string,
     usuario: string,
-    cobertura: string,
-    id: string,
+    cobertura: string
 }

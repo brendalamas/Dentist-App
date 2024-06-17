@@ -11,13 +11,16 @@ export class ApiPacientesService {
   private _httpCliente = inject(HttpClient);
   constructor() { }
 
-  private apiUrl = 'http://localhost:3000/Pacientes';
+  //private apiUrl = 'http://localhost:3000/Pacientes';
+  private apiUrl = 'http://localhost:3000/api/pacientes';
   //http://localhost:3000/Pacientes?dni=23456789B
 
 
   //Se obtiene el paciente por parametro dni
   getPacientebyDni(dni: string): Observable<any> {
-    return this._httpCliente.get<any>(`${this.apiUrl}/?dni=${dni}`);
+    //return this._httpCliente.get<any>(`${this.apiUrl}/?dni=${dni}`);
+    console.log(`${this.apiUrl}/${dni}`);
+    return this._httpCliente.get<any>(`${this.apiUrl}/${dni}`);
   }
 
   //Se obtiene todos los pacientes
@@ -29,7 +32,7 @@ export class ApiPacientesService {
     // Construye el objeto con el diagnóstico actualizado
   
     // Realiza la solicitud PUT al servidor
-    return this._httpCliente.patch<Paciente>(`${this.apiUrl}/${dni}`, {diagnostico:diagnostico});
+    return this._httpCliente.put<Paciente>(`${this.apiUrl}/${dni}`, {diagnostico: diagnostico});
   }
   
   

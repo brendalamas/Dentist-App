@@ -27,8 +27,7 @@ export class RegisterComponent implements OnInit{
     razon_cons: '',
     diagnostico: '',
     usuario: '',
-    cobertura: '',
-    id:""
+    cobertura: ''
   };
   
   constructor(

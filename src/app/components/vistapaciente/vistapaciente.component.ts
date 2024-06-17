@@ -31,9 +31,9 @@ export class VistapacienteComponent implements OnInit {
         this.Apipacientes.getPacientebyDni(params['dni']).subscribe({
           next: data => {
             //se carga el paciente y la vista del complemento
-            this.pacientes = data;
-
-            this.paciente = this.pacientes[0];
+            //this.pacientes = data;
+            this.paciente = data;
+            //this.paciente = this.pacientes[0];
 
             console.log(this.paciente);
             this.loading = false;
@@ -52,7 +52,9 @@ export class VistapacienteComponent implements OnInit {
     this.Apipacientes.putpacienteDiagnostico(dni, diagnostico).subscribe({
       next: () => {
         console.log('Diagnóstico actualizado correctamente');
-        location.reload();
+        setTimeout(() => {
+          location.reload();
+        }, 1000)
         
       },
       error: error => {
